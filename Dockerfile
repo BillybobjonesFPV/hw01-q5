@@ -5,20 +5,13 @@ RUN apk add git && \
     apk add build-base && \
     apk add gcc
 
-# Somewhere in this file, the following line must be included:
-#COPY . C:\Users\Matta\Documents\MicahHWTest\Mattan_hw01-q5-application
-#WORKDIR /Mattan_hw01-q5-application/src
-
-COPY . /HelloWorld
-WORKDIR /HelloWorld
+RUN git clone https://github.com/BillybobjonesFPV/Mattan_hw01-q5-application.git
+#RUN git clone https://github.com/UAH-IC-Design-Team/hw01-q5-application.git
 
 
-
-#RUN git clone https://github.com/BillybobjonesFPV/Mattan_hw01-q5-application.git
-RUN file="$(ls -1 /)" && echo $file
+WORKDIR /Mattan_hw01-q5-application/src
 
 
-RUN g++ -o HelloWorld helloworld.cpp
-#RUN g++ -o MyApp hw01-q5-application.cpp
+RUN g++ -o MyScript hw01-q5-application.cpp
 
-CMD ["./HelloWorld"]
+CMD ["./MyScript"]
