@@ -1,5 +1,6 @@
-FROM gcc:4.9
-COPY . C:\Users\Matta\Documents\MicahHWTest\hw01-q5\HelloWorld
-WORKDIR C:\Users\Matta\Documents\MicahHWTest\hw01-q5\HelloWorld
-RUN g++ -o HelloWorld helloworld.cpp
-CMD ["./HelloWorld"]
+FROM gcc:latest
+COPY . /usr/src/cpp_test
+WORKDIR /usr/src/cpp_test
+
+RUN g++ -o MyScript helloworld.cpp
+CMD ["./MyScript"]
